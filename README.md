@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/thiagobraga/scaffold-php8/raw/main/.github/docker-php.png" width="198" />
+  <img src="https://github.com/scaffoldeducation/php8/raw/main/.github/docker-php.png" width="198" />
 </p>
 
 <h1 align="center">Scaffold PHP 8 Docker Image</h1>
@@ -11,11 +11,11 @@ A Docker image created on top of [**php-fpm 8.0** official image](https://hub.do
 The final size of the images is considerably small if you take into account the content of each image:
 
 ```
-thiagobraga/scaffold-php8:fpm-dev          277MB
-thiagobraga/scaffold-php8:fpm-prod         277MB
-thiagobraga/scaffold-php8:nginx-fpm-dev    321MB
-thiagobraga/scaffold-php8:nginx-fpm-prod   321MB
-thiagobraga/scaffold-php8:quality          341MB
+scaffoldeducation/php8:fpm-dev          277MB
+scaffoldeducation/php8:fpm-prod         277MB
+scaffoldeducation/php8:nginx-fpm-dev    321MB
+scaffoldeducation/php8:nginx-fpm-prod   321MB
+scaffoldeducation/php8:quality          341MB
 ```
 
 <br>
@@ -48,11 +48,11 @@ thiagobraga/scaffold-php8:quality          341MB
 ## Usage
 
 ```Dockerfile
-FROM thiagobraga/scaffold-php8:fpm-dev
-FROM thiagobraga/scaffold-php8:fpm-prod
-FROM thiagobraga/scaffold-php8:nginx-fpm-dev
-FROM thiagobraga/scaffold-php8:nginx-fpm-prod
-FROM thiagobraga/scaffold-php8:quality
+FROM scaffoldeducation/php8:fpm-dev
+FROM scaffoldeducation/php8:fpm-prod
+FROM scaffoldeducation/php8:nginx-fpm-dev
+FROM scaffoldeducation/php8:nginx-fpm-prod
+FROM scaffoldeducation/php8:quality
 ```
 
 <br>
