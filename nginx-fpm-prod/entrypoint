@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dockerize \
+  -template /scaffold/scaffold.ini:/usr/local/etc/php/conf.d/scaffold.ini \
+  -template /scaffold/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf \
+  -template /scaffold/www.conf:/etc/nginx/conf.d/www.conf
+
+/scaffold/30-tune-worker-processes.sh
+
+if [[ "$1" =~ 'php-fpm' ]] || [[ "$1" =~ 'nginx' ]] || [[ "$1" =~ 'supervisord' ]]
+  then exec su-exec root "${@}"
+  else exec su-exec ${ASUSER} "${@}"
+fi

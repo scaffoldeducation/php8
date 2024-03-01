@@ -1,0 +1,55 @@
+{
+  "files.associations": {
+    "entrypoint*": "shellscript",
+    "supervisor.conf": "ini",
+    "www.conf": "nginx",
+    "zz-docker.conf": "ini"
+  },
+  "material-icon-theme.files.associations": {
+    "www.conf": "nginx"
+  },
+  "material-icon-theme.folders.associations": {
+    "fpm-dev": "php",
+    "fpm-prod": "php",
+    "nginx-fpm-dev": "global",
+    "nginx-fpm-prod": "global",
+    "quality": "error"
+  },
+  "filewatcher.autoClearConsole": true,
+  "filewatcher.shell": "/usr/bin/zsh",
+  "workbench.colorCustomizations": {
+    "sideBar.background": "#35343f"
+  },
+  "filewatcher.commands": [
+    {
+      "match": "./fpm-dev/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "fpm-dev"],
+      "event": "onFileChange"
+    },
+    {
+      "match": "./fpm-prod/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "fpm-prod"],
+      "event": "onFileChange"
+    },
+    {
+      "match": "./nginx-fpm-dev/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "nginx-fpm-dev"],
+      "event": "onFileChange"
+    },
+    {
+      "match": "./nginx-fpm-prod/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "nginx-fpm-prod"],
+      "event": "onFileChange"
+    },
+    {
+      "match": "./quality/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "quality"],
+      "event": "onFileChange"
+    },
+    {
+      "match": ".github/workflows/*",
+      "vscodeTask": ["workbench.action.tasks.runTask", "act"],
+      "event": "onFileChange"
+    }
+  ]
+}
