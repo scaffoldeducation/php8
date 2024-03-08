@@ -14,17 +14,17 @@ jobs:
 
       - name: Build and export to Docker
         uses: docker/build-push-action@v5
-        with: { load: true, context: "${{ matrix.type }}", tags: "thiagobraga/scaffold-php8:${{ matrix.type }}" }
+        with: { load: true, context: "${{ matrix.type }}", tags: "scaffoldeducation/php8:${{ matrix.type }}" }
 
       - name: Test images
         run: ./test.build.sh ${{ matrix.type }} && ./test.run.sh ${{ matrix.type }}
 
       - name: Login to DockerHub
         uses: docker/login-action@v3
-        if: github.ref == 'refs/heads/main' && github.repository == 'thiagobraga/scaffold-php8'
+        if: github.ref == 'refs/heads/main' && github.repository == 'scaffoldeducation/php8'
         with: { username: "${{ secrets.DOCKERHUB_USERNAME }}", password: "${{ secrets.DOCKERHUB_PASSWORD }}" }
 
       - name: Build and push
         uses: docker/build-push-action@v5
-        if: github.ref == 'refs/heads/main' && github.repository == 'thiagobraga/scaffold-php8'
-        with: { push: true, context: "${{ matrix.type }}", tags: "thiagobraga/scaffold-php8:${{ matrix.type }}" }
+        if: github.ref == 'refs/heads/main' && github.repository == 'scaffoldeducation/php8'
+        with: { push: true, context: "${{ matrix.type }}", tags: "scaffoldeducation/php8:${{ matrix.type }}" }
