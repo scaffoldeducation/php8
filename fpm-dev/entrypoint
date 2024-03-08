@@ -9,7 +9,7 @@ dockerize \
   -template /scaffold/scaffold.ini:/usr/local/etc/php/conf.d/scaffold.ini \
   -template /scaffold/zz-docker.conf:/usr/local/etc/php-fpm.d/zz-docker.conf
 
-if [[ "$1" =~ 'php-fpm' ]]
+if [[ "$1" =~ 'sh' ]] || [[ "$1" =~ 'bash' ]] || [[ "$1" =~ 'php-fpm' ]]
   then exec su-exec root "${@}"
   else exec su-exec ${ASUSER} "${@}"
 fi
