@@ -15,5 +15,5 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
-          repository: thiagobraga/scaffold-php8
+          repository: scaffoldeducation/php8
           short-description: ${{ github.event.repository.description }}
