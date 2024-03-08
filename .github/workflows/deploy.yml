@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
-      max-parallel: 1
-      matrix: { type: [quality, nginx-fpm-prod, nginx-fpm-dev, fpm-prod, fpm-dev] }
+      max-parallel: 5
+      matrix: { type: [fpm-dev, fpm-prod, nginx-fpm-dev, nginx-fpm-prod, quality] }
 
     steps:
       - uses: actions/checkout@v4
