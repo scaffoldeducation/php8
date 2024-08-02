@@ -34,8 +34,8 @@ RUN set -x \
     libpng libpq libzip-dev openssh-client optipng pngquant procps shadow su-exec >/dev/null 2>&1 \
   && apk add --no-cache --virtual .build-deps ${PHPIZE_DEPS} \
     freetype-dev icu-dev imagemagick-dev libedit-dev libjpeg-turbo-dev libpng-dev \
-    libxml2-dev linux-headers oniguruma-dev openldap-dev >/dev/null 2>&1 \
-  && docker-php-ext-configure gd --with-freetype --with-jpeg >/dev/null 2>&1 \
+    libwebp-dev libwebp-tools libxml2-dev linux-headers oniguruma-dev openldap-dev >/dev/null 2>&1 \
+  && docker-php-ext-configure gd --with-freetype --with-jpeg --with-webp \
   && export CFLAGS="$PHP_CFLAGS" CPPFLAGS="$PHP_CPPFLAGS" LDFLAGS="$PHP_LDFLAGS" \
   && docker-php-ext-install -j$(nproc) \
     bcmath calendar exif gd intl ldap mbstring mysqli \
